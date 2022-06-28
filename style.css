@@ -1,0 +1,163 @@
+*,
+::after,
+::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --text-color: #e1e6e7;
+    --bg: #011746;
+    --bg-btn: #3772ff;
+    --bg-body: #d9ebec;
+}
+
+#header {
+    background-color: var(--bg);
+    padding: 10px 10px;
+    color: var(--text-color);
+    text-align: center;
+    font-weight: bold;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    transition: 0.2s;
+}
+
+body {
+    min-height: 100vh;
+    background-color: var(--bg-body);
+    margin: 0;
+    font-family: 'Baloo 2', sans-serif;
+}
+
+.main-content {
+    max-width: 80%;
+    margin: auto;
+    padding: 130px 45px;
+}
+
+h2 {
+    color: var(--bg);
+    text-align: center;
+    font-weight: 800;
+    font-size: clamp(1.8em, 3vw, 2.5em);
+}
+
+#blocs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px auto;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+button {
+    font-family: comfortaa, sans-serif;
+    font-weight: 700;
+    background-color: var(--bg-btn);
+    color: var(--text-color);
+    border: 3px solid var(--bg);
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    font-size: clamp(0.7em, 2vw, 1.3em);
+    transition: all 0.3s;
+}
+
+button:hover {
+    cursor: pointer;
+    color: var(--bg);
+    transition: all 0.3s;
+}
+
+button:disabled {
+    cursor: default;
+    opacity: 0.3;
+}
+
+.actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin-top: 35px;
+    gap: 30px;
+}
+
+#answer {
+    text-align: center;
+    font-weight: 700;
+    font-size: clamp(1.3em, 4vw, 2em);
+    color: var(--bg);
+    height: 70px;
+}
+
+@media all and (max-width:480px) {
+    .actions {
+        gap: 10px;
+    }
+}
+
+
+/*======================== import boutons animés ==========================*/
+
+.cont-btn {
+    cursor: pointer;
+    position: relative;
+    padding: 10px 20px;
+    background: none;
+    color: var(--bg-btn);
+    font-family: 'Baloo 2', cursive;
+    font-weight: bold;
+    font-size: 24px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    transition: all 1s;
+}
+
+.cont-btn:after,
+.cont-btn:before {
+    content: " ";
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    border: 0px solid #000;
+    transition: all 1s;
+}
+
+.cont-btn:after {
+    top: 4px;
+    left: 4px;
+    border-top: .1em solid var(--bg);
+    border-left: .1em solid var(--bg);
+}
+
+.cont-btn:before {
+    bottom: 4px;
+    right: 4px;
+    border-bottom: .1em solid var(--bg);
+    border-right: .1em solid var(--bg);
+}
+
+.cont-btn:hover {
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    color: var(--bg)
+}
+
+.cont-btn:hover:before,
+.cont-btn:hover:after {
+    width: 100%;
+    height: 100%;
+}
+
+.cont-btn-container {
+    background: none;
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
